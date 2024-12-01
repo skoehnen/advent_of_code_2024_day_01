@@ -6,7 +6,7 @@ use std::fs;
 use crate::calculation::{calculate_distance, calculate_similarity_score};
 
 fn main() {
-    let file_path = "data/input.data";
+    let file_path = "data/test.data";
 
     let contents = fs::read_to_string(file_path)
         .expect("Should have been able to read the file");
