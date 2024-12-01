@@ -1,11 +1,11 @@
 use crate::data_transform;
 
 pub fn calculate_similarity_score(data: String) -> i32 {
-    let similarity_vector = sort_vectors(
+    let similarity_vector = calculate_similarity_vector(
         data_transform::transform(data)
     );
 
-    return 0;
+    return similarity_vector.iter().sum();
 }
 
 pub fn calculate_distance(data: String) -> i32 {
@@ -16,7 +16,18 @@ pub fn calculate_distance(data: String) -> i32 {
             )
     );
 
-    return difference_vector.iter().sum();;
+    return difference_vector.iter().sum();
+}
+
+fn calculate_similarity_vector(data: (Vec<i32>, Vec<i32>)) -> Vec<i32> {
+    let mut similarity_vector: Vec<i32> = Vec::new();
+
+    for element in data.0 {
+        let count = data.1.iter().filter(|&n| *n == element).count();
+        similarity_vector.push(element * i32::try_from(count).unwrap());
+    }
+
+    return similarity_vector;
 }
 
 fn sort_vectors(data: (Vec<i32>, Vec<i32>)) -> (Vec<i32>, Vec<i32>) {
