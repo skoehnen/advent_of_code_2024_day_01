@@ -1,12 +1,14 @@
 use crate::data_transform;
 
-pub fn calculate_distance(data: String) -> i64 {
-    let split_data = calculate_difference_vector(
-        sort_vectors(
-            data_transform::transform(data)
-        )
+pub fn calculate_distance(data: String) -> i32 {
+    let difference_vector =
+        calculate_difference_vector(
+            sort_vectors(
+                data_transform::transform(data)
+            )
     );
-    return 0;
+
+    return difference_vector.iter().sum();;
 }
 
 fn sort_vectors(data: (Vec<i32>, Vec<i32>)) -> (Vec<i32>, Vec<i32>) {
