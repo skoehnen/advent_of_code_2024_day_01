@@ -1,5 +1,3 @@
-use std::str::Split;
-
 pub fn transform(data: String) -> (Vec<i32>, Vec<i32>){
     let mut vec_left = Vec::new();
     let mut vec_right = Vec::new();

@@ -3,6 +3,7 @@ mod data_transform;
 mod calculation;
 
 use std::fs;
+use crate::calculation::calculate_distance;
 
 fn main() {
     let file_path = "data/test.data";
@@ -11,17 +12,19 @@ fn main() {
         .expect("Should have been able to read the file");
 
     println!("With text:\n{contents}");
-    let split_data = data_transform::transform(contents);
+    //let split_data = data_transform::transform(contents);
 
-    let (vec_left, vec_right) = split_data;
+    let distance = calculate_distance(contents);
 
-    for item in vec_left.iter() {
-        println!("{}", item)
-    }
+    //let (vec_left, vec_right) = split_data;
 
-    println!(" ");
+    //for item in vec_left.iter() {
+    //    println!("{}", item)
+    //}
 
-    for item in vec_right.iter() {
-        println!("{}", item)
-    }
+    //println!(" ");
+
+    //for item in vec_right.iter() {
+    //    println!("{}", item)
+    //}
 }
