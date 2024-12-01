@@ -2,10 +2,8 @@ mod downloader;
 
 fn main() {
     println!("Hello, world!");
-    //let body = reqwest::blocking::get("https://www.rust-lang.org")?
-    //    .text()?;
-
-    let body = match reqwest::blocking::get("https://www.rust-lang.org") {
+    
+    let body = match reqwest::blocking::get("https://adventofcode.com/2024/day/1/input") {
         Ok(body) => body,
         Err(error) => panic!("There was a problem with the get: {:?}", error),
     };
