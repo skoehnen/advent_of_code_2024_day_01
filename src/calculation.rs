@@ -1,7 +1,7 @@
 use crate::data_transform;
 
 pub fn calculate_similarity_score(data: String) -> i32 {
-    let similarity_vector =             sort_vectors(
+    let similarity_vector = sort_vectors(
         data_transform::transform(data)
     );
 
