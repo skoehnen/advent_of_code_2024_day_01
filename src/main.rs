@@ -16,15 +16,5 @@ fn main() {
 
     let distance = calculate_distance(contents);
 
-    //let (vec_left, vec_right) = split_data;
-
-    //for item in vec_left.iter() {
-    //    println!("{}", item)
-    //}
-
-    //println!(" ");
-
-    //for item in vec_right.iter() {
-    //    println!("{}", item)
-    //}
+    println!("{}", distance);
 }

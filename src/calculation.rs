@@ -28,7 +28,8 @@ fn calculate_difference_vector(data: (Vec<i32>, Vec<i32>)) -> Vec<i32> {
     for item in data.0 {
         let current_vec_right = vec_right_iter.next().unwrap();
         println!("{:?} - {:?}", item, current_vec_right);
-        vec_difference.push(item - current_vec_right);
+        let difference = item - current_vec_right;
+        vec_difference.push(difference.abs());
     }
 
     return vec_difference;
