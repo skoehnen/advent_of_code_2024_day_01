@@ -1,17 +1,13 @@
 mod downloader;
+mod data_transform;
+
+use std::fs;
 
 fn main() {
-    println!("Hello, world!");
-    
-    let body = match reqwest::blocking::get("https://adventofcode.com/2024/day/1/input") {
-        Ok(body) => body,
-        Err(error) => panic!("There was a problem with the get: {:?}", error),
-    };
+    let file_path = "data/test.data";
 
-    let body_text = match body.text() {
-        Ok(body) => body,
-        Err(error) => panic!("There was a problem with the request: {:?}", error),
-    };
+    let contents = fs::read_to_string(file_path)
+        .expect("Should have been able to read the file");
 
-    println!("body_text = {body_text:?}");
+    println!("With text:\n{contents}");
 }
