@@ -1,5 +1,13 @@
 use crate::data_transform;
 
+pub fn calculate_similarity_score(data: String) -> i32 {
+    let similarity_vector =             sort_vectors(
+        data_transform::transform(data)
+    );
+
+    return 0;
+}
+
 pub fn calculate_distance(data: String) -> i32 {
     let difference_vector =
         calculate_difference_vector(
